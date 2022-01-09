@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1200.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.careeranalyzer.CollegeListViewController">
+   <children>
+      <SplitPane dividerPositions="0.7404006677796328" layoutX="-2.0" layoutY="-2.0" prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane fx:id="anchorPane" minHeight="600.0" minWidth="880.0" prefHeight="600.0" prefWidth="798.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Text layoutX="333.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LIST OF COLLEGES">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="644.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort By: ">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <ChoiceBox fx:id="filtersBox" layoutX="722.0" layoutY="3.0" prefHeight="24.0" prefWidth="86.0" />
+                  <Button fx:id="sortButton" layoutX="815.0" layoutY="3.0" mnemonicParsing="false" onAction="#sort" prefHeight="24.0" prefWidth="49.0" text="Apply">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="tableView" layoutY="29.0" prefHeight="574.0" prefWidth="880.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets top="30.0" />
+               </padding></AnchorPane>
+          <AnchorPane minHeight="600.0" minWidth="320.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Text fx:id="detailsHead" layoutX="63.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Details">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="firstNameHead" layoutX="12.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name: " />
+                  <Text fx:id="lastNameHead" layoutX="12.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name: " />
+                  <Text fx:id="ageHead" layoutX="12.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age: " wrappingWidth="78.21875" />
+                  <Text fx:id="emailHead" layoutX="12.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: " />
+                  <Text fx:id="numberHead" layoutX="14.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number: " />
+                  <Text fx:id="cityHead" layoutX="12.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City: " />
+                  <Text fx:id="genderHead" layoutX="13.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender: " />
+                  <Text fx:id="firstNameField" layoutX="119.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="lastNameField" layoutX="118.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="ageField" layoutX="117.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="emailField" layoutX="118.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="phoneField" layoutX="118.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="cityField" layoutX="116.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="150.0" />
+                  <Text fx:id="genderField" layoutX="115.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Button layoutX="227.0" layoutY="14.0" mnemonicParsing="false" onAction="#Back" style="-fx-background-color: #17252A;" text="⬅ Back" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
+                  </Button>
+                  <Text fx:id="customFieldHeading" layoutX="13.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Text fx:id="customFieldText" layoutX="119.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
