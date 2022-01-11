@@ -118,6 +118,7 @@ public class FormController implements Initializable {
             formattedDate = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         }catch (NullPointerException e){
             emptyDOB.setText("DOB can't be empty");
+            allCorrect = false;
         }
         //Number
         phoneNumError.setText("");
