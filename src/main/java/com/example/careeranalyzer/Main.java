@@ -12,8 +12,11 @@ import java.io.IOException;
 
 public class Main extends Application {
 
+    // The main USER of program
     private static User currentUser = new User();
+    // Contains all Colleges
     public static CollegeLinkedList collegeLinkedList = new CollegeLinkedList();
+    // Contains all universities
     public static UniversityLinkedList universityLinkedList = new UniversityLinkedList();
     @Override
     public void start(Stage stage) throws IOException {
@@ -90,6 +93,7 @@ public class Main extends Application {
         College alNoorCollege = new College("Govt. Degree Girls College Al-Noor","Alnoor Society F.B area Gulberg Town","Government",425,5,"Girls");
         alNoorCollege.setFaculties("Pre-Engineering","Pre-Medical","Commerce");
 
+        //adding objects in above linked list
         collegeLinkedList.insertInstitute(abdullahCollege);
         collegeLinkedList.insertInstitute(forWomenCollege);
         collegeLinkedList.insertInstitute(sirSyedCollege);
@@ -148,6 +152,7 @@ public class Main extends Application {
         FUUAST.setField("Business Administration","Accounting and Finance","Computer Science","Economics","Software Engineering","Social Sciences","Computer System Engineering","Electrical Engineering","Psychology");
         FUUAST.setMostPreferredFields("BBA","BSAF","BSCS");
 
+        //adding objects in above linked list
         universityLinkedList.insertInstitute(IBA);
         universityLinkedList.insertInstitute(MAJU);
         universityLinkedList.insertInstitute(FAST);

@@ -15,6 +15,9 @@ public class HomePageController {
     private Scene scene;
     private Parent root;
 
+
+    /* These vars are being used in next Scenes of applications. They are connected with
+    tableviews of colleges / universities */
     static boolean collegesByFaculty = false;
     static boolean collegesByMerit = false;
     static boolean collegesByRank = false;
@@ -76,7 +79,7 @@ public class HomePageController {
         stage.setScene(scene);
         stage.show();
     }
-
+    //this method is being used for BACK button click
     public static void allFalse(){
         collegesByFaculty = false;
         collegesByMerit = false;

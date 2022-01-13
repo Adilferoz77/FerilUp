@@ -29,6 +29,7 @@ public class FormController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    //all fields used in scene builder, it contains buttons, text views etc
     @FXML
     private TextField firstName;
     @FXML
@@ -58,15 +59,18 @@ public class FormController implements Initializable {
     @FXML
     private ChoiceBox<String> gender;
 
+
+    //Initializing method will run whenever the current scene is viewed
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         city.getItems().add("Karachi");
         String [] genders = {"male","female"};
         gender.getItems().addAll(genders);
     }
-
+    //On button Click
     public void submit(ActionEvent event) throws IOException {
         User user;
+        // checking if all values of form are entered correctly
         Boolean allCorrect = true;
         //firstName
         String fName = firstName.getText();
@@ -150,12 +154,14 @@ public class FormController implements Initializable {
         }
 
         if(allCorrect){
+            //converting selected DOB to age
             int age = Year.now().getValue() -Integer.parseInt(formattedDate.substring(6,10));
             int month = (Calendar.getInstance().get(Calendar.MONTH)+1) - Integer.parseInt(formattedDate.substring(5,7)) ;
             if(month<0){
                 age--;
             }
             user = new User(fName,lName,age,emailField,phoneNumber,selectedCity,selectedGender.toUpperCase(Locale.ROOT).charAt(0));
+            // Assigning all values of user to a user object in MAIN
             Main.updateUserDetails(user);
             switchStage(event);
         }

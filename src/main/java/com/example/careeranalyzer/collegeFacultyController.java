@@ -22,6 +22,7 @@ public class collegeFacultyController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    // used ahead for searching colleges containing this value
     public static String selectedFaculty ="";
 
     @FXML

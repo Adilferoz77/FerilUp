@@ -33,18 +33,23 @@ public class GetStartedController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //logo
         Image logo = new Image(getClass().getResourceAsStream("FerilUp_Logo.png"));
         logoView.setImage(logo);
         logoView.setX(-45);
         logoView.setY(-40);
         logoView.setFitHeight(300);
         logoView.setFitWidth(300);
+        //Animation Object
         TranslateTransition buttonAnim = new TranslateTransition();
         buttonAnim.setNode(getStartedButton);
+        //direction
         buttonAnim.setByY(-250);
         buttonAnim.setDuration(Duration.millis(1200));
         buttonAnim.play();
+        //Adding colleges in Main
         Main.addColleges();
+        //Adding Universities in Main
         Main.addUniversities();
     }
 

@@ -22,6 +22,8 @@ public class UniversityListViewController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    //THIS CLASS CONTAINS COMMENTS SIMILAR TO CLASS "COLLEGE LIST VIEW CONTROLLER"
+
     @FXML
     AnchorPane anchorPane;
     @FXML
@@ -64,6 +66,9 @@ public class UniversityListViewController implements Initializable {
     Text cityHead;
     @FXML
     Text genderHead;
+
+
+    //THIS CLASS CONTAINS COMMENTS SIMILAR TO CLASS "COLLEGE LIST VIEW CONTROLLER"
 
     UniversityLinkedList currentLL = new UniversityLinkedList();
     User currentUser = Main.getUserDetails();

@@ -20,6 +20,7 @@ public class UniversityFieldFormController implements Initializable {
     private Scene scene;
     private Parent root;
 
+    //used ahead
     public static String selectedField = "";
 
     @FXML

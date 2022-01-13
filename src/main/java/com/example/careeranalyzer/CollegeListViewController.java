@@ -66,6 +66,7 @@ public class CollegeListViewController implements Initializable {
     @FXML
     Text genderHead;
 
+    //this is being used for Sorting, searching... So that the original list can be same
     CollegeLinkedList currentLL = new CollegeLinkedList();
     User currentUser = Main.getUserDetails();
     String userGender = (currentUser.getGender()=='M')?"Boys":"Girls";
@@ -73,13 +74,17 @@ public class CollegeListViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        //values in HOME PAGE
         if(HomePageController.collegesByRank){
+            //sorting options
             String[] sortOptions = {"Name", "Institute Type", "Minimum CutOff", "HSC Rank"};
             filtersBox.getItems().addAll(sortOptions);
 
             tableView = new TableView<College>();
 
+            //table column for ranks
             TableColumn<College, Integer> hscRank = new TableColumn<College, Integer>("HSC Rank");
+            //used for populating data inside columns
             hscRank.setCellValueFactory(new PropertyValueFactory<College, Integer>("hscRank"));
             hscRank.setSortable(false);
             hscRank.setMinWidth(80);
@@ -98,11 +103,13 @@ public class CollegeListViewController implements Initializable {
             minimumCutOff.setCellValueFactory(new PropertyValueFactory<College, Integer>("minimumCutOff"));
             minimumCutOff.setSortable(false);
 
+            //adding columns
             tableView.getColumns().add(hscRank);
             tableView.getColumns().add(name);
             tableView.getColumns().add(instituteType);
             tableView.getColumns().add(minimumCutOff);
 
+            //equally divides columns in width
             tableView.setColumnResizePolicy(tableView.CONSTRAINED_RESIZE_POLICY);
             tableView.setMinHeight(570);
             tableView.setMinWidth(880);
@@ -110,6 +117,7 @@ public class CollegeListViewController implements Initializable {
 
             anchorPane.getChildren().add(tableView);
 
+            //being used for inserting values in CURRENTLL object
             CollegeNode node = Main.collegeLinkedList.head;
             while (node.next != null) {
                 if(userGender.equals(node.college.getEducationType())) {
@@ -123,7 +131,7 @@ public class CollegeListViewController implements Initializable {
                 currentLL.insertInstitute(node.college);
             }
 
-
+            //Setting right side fields to current data of user
             firstNameField.setText(currentUser.getFirstName());
             lastNameField.setText(currentUser.getLastName());
             ageField.setText(String.valueOf(currentUser.getAge()));
@@ -135,6 +143,8 @@ public class CollegeListViewController implements Initializable {
             }else{
                 genderField.setText("Female");
             }
+
+            //Same functions as above
         }else if(HomePageController.collegesByFaculty){
             String[] sortOptions = {"Name", "Institute Type", "Minimum CutOff"};
             filtersBox.getItems().addAll(sortOptions);
@@ -193,6 +203,8 @@ public class CollegeListViewController implements Initializable {
             }
             customFieldHeading.setText("Selected Field: ");
             customFieldText.setText(collegeFacultyController.selectedFaculty);
+
+            //Same functions as above
         }else if(HomePageController.collegesByMerit){
             String[] sortOptions = {"Name", "Institute Type", "Minimum CutOff"};
             filtersBox.getItems().addAll(sortOptions);
@@ -253,10 +265,18 @@ public class CollegeListViewController implements Initializable {
             customFieldText.setText(String.valueOf(CollegeMeritFormController.marks));
         }
 
+
+        //This is being used for showing data of colleges on right anchor pane
+
+        //represents single row in a tableview
+
         tableView.setRowFactory(tableView -> {
 
+            // collecting college object clicked row
             TableRow<College> college = new TableRow<>();
             college.setOnMouseClicked(mouseEvent -> {
+
+                //Setting current college details
                 detailsHead.setText("College Details");
                 // System.out.println(college.getItem().getName());
                 firstNameHead.setText("Name: ");
@@ -291,6 +311,8 @@ public class CollegeListViewController implements Initializable {
 
     public void sort(ActionEvent event) {
         String sortType = filtersBox.getValue();
+
+        //clearing the current table view
         while (!tableView.getItems().isEmpty()) {
             tableView.getItems().remove(0);
         }
@@ -298,6 +320,7 @@ public class CollegeListViewController implements Initializable {
         CollegeLinkedList sortedList = new CollegeLinkedList();
 
         while (node.next!=null){
+            //creating a temporary LL
             sortedList.insertInstitute(node.college);
             node = node.next;
         }
@@ -360,6 +383,8 @@ public class CollegeListViewController implements Initializable {
         }
 
         CollegeNode collegeNode = sortedList.head;
+
+        //pushing sorted values of ll
         while (collegeNode.next != null) {
             tableView.getItems().add(collegeNode.college);
             collegeNode = collegeNode.next;
