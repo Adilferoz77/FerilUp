@@ -133,7 +133,7 @@ public class Main extends Application {
         SSUET.setMostPreferredFields("BSEE","BSSE","BSCS");
 
 
-        University ziauddin= new University("Ziauddin University","Block 6",  "Clifton”,”Private",50,6,"90,750");
+        University ziauddin= new University("Ziauddin University","Block 6 Clifton”","Private",50,6,"90,750");
         ziauddin.setField("Electrical Engineering","Computer Science”,”Software Engineering”,Business Administration","Accounting and Finance");
         ziauddin.setMostPreferredFields("BBA","BSAF");
 
@@ -144,7 +144,7 @@ public class Main extends Application {
 
 
 
-        University FUUAST = new University("Federal Urdu University Of Science and Technology","Defence","Government",45,99,"30,000");
+        University FUUAST = new University("Federal Urdu University Of Science and Technology","University Road","Government",45,99,"30,000");
         FUUAST.setField("Business Administration","Accounting and Finance","Computer Science","Economics","Software Engineering","Social Sciences","Computer System Engineering","Electrical Engineering","Psychology");
         FUUAST.setMostPreferredFields("BBA","BSAF","BSCS");
 
