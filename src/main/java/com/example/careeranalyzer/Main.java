@@ -120,8 +120,42 @@ public class Main extends Application {
         FAST.setField("Artificial Intelligence","Business Analytics","Computer Science","Cyber Security","Electrical Engineering","Internet of Things","Robotics","Software Engineering");
         FAST.setMostPreferredFields("BSCS","BSSE");
 
+        University CBM = new University("Institute of Business Management","Korangi","Private",50,15,"114,940");
+        CBM.setField("Business Administration","Accounting and Finance","Computer Science","Economics","Economics and Maths","Social Sciences");
+        CBM.setMostPreferredFields("BBA","BSAF","BSEconomics");
+
+        University suffa = new University("DHA Suffa University","Defence","Private",50,10,"125,500");
+        suffa.setField("Business Administration","Electrical Engineering","Computer Science","Software Engineering");
+        suffa.setMostPreferredFields("BBA","BSEE","BSCS");
+
+        University SSUET = new University("Sir Syed University Of Engineering and Technology","University Road","Semi-Government",50,6,"110,000");
+        SSUET.setField("Business Administration","Electrical Engineering","Computer Science","Software Engineering");
+        SSUET.setMostPreferredFields("BSEE","BSSE","BSCS");
+
+
+        University ziauddin= new University("Ziauddin University","Block 6",  "Clifton”,”Private",50,6,"90,750");
+        ziauddin.setField("Electrical Engineering","Computer Science”,”Software Engineering”,Business Administration","Accounting and Finance");
+        ziauddin.setMostPreferredFields("BBA","BSAF");
+
+
+        University szabist = new University("Shaheed Zukfiqar Bhutto","Defence","Private",50,8,"155,555");
+        szabist.setField("Business Administration","Accounting and Finance","Computer Science","Social Sciences");
+        szabist.setMostPreferredFields("BBA","BSAF","BSSS");
+
+
+
+        University FUUAST = new University("Federal Urdu University Of Science and Technology","Defence","Government",45,99,"30,000");
+        FUUAST.setField("Business Administration","Accounting and Finance","Computer Science","Economics","Software Engineering","Social Sciences","Computer System Engineering","Electrical Engineering","Psychology");
+        FUUAST.setMostPreferredFields("BBA","BSAF","BSCS");
+
         universityLinkedList.insertInstitute(IBA);
         universityLinkedList.insertInstitute(MAJU);
         universityLinkedList.insertInstitute(FAST);
+        universityLinkedList.insertInstitute(CBM);
+        universityLinkedList.insertInstitute(suffa);
+        universityLinkedList.insertInstitute(SSUET);
+        universityLinkedList.insertInstitute(ziauddin);
+        universityLinkedList.insertInstitute(szabist);
+        universityLinkedList.insertInstitute(FUUAST);
     }
 }
